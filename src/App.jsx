@@ -22,7 +22,7 @@ function App() {
 
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0, 10);
+    passwordRef.current?.setSelectionRange(0, 100);
     window.navigator.clipboard.writeText(password);
     toast.success("Copied to clipboard!");
   }, [password]);
@@ -33,11 +33,12 @@ function App() {
 
   return (
     <div className="bg-gray-800 text-white min-h-screen pt-24 flex justify-center items-start">
-      <div className="bg-gray-900 w-[600px] rounded-lg flex flex-col justify-center ">
-        <h1 className="mt-8 text-4xl font-semibold text-center">
+      <div className="bg-gray-900 w-[600px] rounded-lg flex flex-col justify-center items-center">
+        <img src="/favicon.png" alt="password generator" className="w-20 mt-4" />
+        <h1 className="mt-2 text-4xl font-semibold text-center whitespace-nowrap">
           Password Generator
         </h1>
-        <div className="flex justify-center px-16 pt-8">
+        <div className="flex justify-center px-16 pt-8 w-full">
           <input
             type="text"
             value={password}
